@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  temporal:
+    image: temporalio/auto-setup:latest
+    ports:
+      - "7233:7233"
+      - "8233:8233"
+    environment:
+      - DB=postgres12
+      - DB_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PWD=password
+      - POSTGRES_SEEDS=postgres
+    depends_on:
+      - postgres
+    networks:
+      - temporal-network
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=temporal
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - temporal-network
+
+  postgres-orders:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=temporal_orders
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5433:5432"
+    volumes:
+      - orders_data:/var/lib/postgresql/data
+    networks:
+      - temporal-network
+
+volumes:
+  postgres_data:
+  orders_data:
+
+networks:
+  temporal-network:
+    driver: bridge
