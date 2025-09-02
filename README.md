@@ -1,6 +1,6 @@
 # Temporal Order Processing System
 
-A fault-tolerant order processing workflow system built with [Temporal](https://temporal.io/) and Python, demonstrating complex workflow orchestration with parent-child relationships, signal handling, and database persistence.
+A fault-tolerant order processing workflow system built with Temporal and Python, demonstrating complex workflow orchestration with parent-child relationships, signal handling, and database persistence.
 
 ## Architecture Overview
 
@@ -12,13 +12,13 @@ A fault-tolerant order processing workflow system built with [Temporal](https://
 
 ## Features
 
-- ✅ Parent-child workflow relationships
-- ✅ Signal-based manual approval process
-- ✅ Idempotent payment processing
-- ✅ Comprehensive retry policies and error handling
-- ✅ Database persistence with audit trails
-- ✅ CLI interface for workflow management
-- ✅ Fault tolerance testing with `flaky_call()` simulation
+- Parent-child workflow relationships
+- Signal-based manual approval process
+- Idempotent payment processing
+- Comprehensive retry policies and error handling
+- Database persistence with audit trails
+- CLI interface for workflow management
+- Fault tolerance testing with `flaky_call()` simulation
 
 ## Quick Start
 
@@ -29,7 +29,7 @@ A fault-tolerant order processing workflow system built with [Temporal](https://
 ### Setup
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/joeramirez07/temporal-order-system.git
 cd temporal-order-system
 
 # Create virtual environment
